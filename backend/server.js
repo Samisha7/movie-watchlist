@@ -8,8 +8,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+const movieRoutes = require("./routes/movie-route");
+app.use("/api/movies", movieRoutes);
+
 app.get("/", (req, res) => {
-  res.send("movie watchlist api is running");
+  res.send(" movie watch list api is running");
 });
 
 const PORT = process.env.PORT || 5000;
