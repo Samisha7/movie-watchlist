@@ -1,16 +1,52 @@
-# React + Vite
+# 🎬 Movie Watchlist
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A full stack MERN application to track movies you want to watch and movies you've already seen.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Add movies with title, genre, and year
+- Mark movies as watched / unwatched
+- Delete movies from your list
+- Movies split into "Up Next" and "Watched" sections
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Frontend**
 
-## Expanding the Oxlint configuration
+- React (Vite)
+- Axios
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+**Backend**
+
+- Node.js
+- Express.js
+- MongoDB (local)
+- Mongoose
+
+## Project Structure
+
+movie-watchlist/
+
+├── backend/
+
+│ ├── models/
+
+│ │ └── movie-model.js
+
+│ ├── routes/
+
+│ │ └── movie-route.js
+
+│ ├── .env
+
+│ └── server.js
+
+└── frontend/
+
+└── src/
+
+└── App.jsx
+
+## Author
+
+Samuel Mekonnen — [GitHub](https://github.com/Samisha7) · [Portfolio](https://samuel-mekonnen-portfolio-website.vercel.app)
