@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+const API = import.meta.env.VITE_API_URL;
+
 function App() {
   const [movies, setMovies] = useState([]);
   const [title, setTitle] = useState("");
@@ -12,17 +14,13 @@ function App() {
   }, []);
 
   const fetchMovies = async () => {
-    const res = await axios.get("http://localhost:5000/api/movies");
+    const res = await axios.get(`${API}/api/movies`);
     setMovies(res.data);
   };
 
   const addMovie = async () => {
     if (!title || !genre || !year) return;
-    await axios.post("http://localhost:5000/api/movies", {
-      title,
-      genre,
-      year,
-    });
+    await axios.post(`${API}/api/movies`, { title, genre, year });
     setTitle("");
     setGenre("");
     setYear("");
@@ -30,12 +28,12 @@ function App() {
   };
 
   const toggleWatched = async (id) => {
-    await axios.put(`http://localhost:5000/api/movies/${id}`);
+    await axios.put(`${API}/api/movies/${id}`);
     fetchMovies();
   };
 
   const deleteMovie = async (id) => {
-    await axios.delete(`http://localhost:5000/api/movies/${id}`);
+    await axios.delete(`${API}/api/movies/${id}`);
     fetchMovies();
   };
 
